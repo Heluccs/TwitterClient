@@ -12,8 +12,10 @@ class profileDetail: UIViewController {
     
     var tweet: Tweet?
     
+    @IBOutlet weak var screename: UILabel!
     @IBOutlet weak var followingCount: UILabel!
     
+    @IBOutlet weak var bannerImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
 
     @IBOutlet weak var profileImage: UIImageView!
@@ -27,11 +29,18 @@ class profileDetail: UIViewController {
         print(tweet)
         if tweet != nil {
     
-        followerCount.text = "\(tweet!.followers)"
-        followingCount.text = "\(tweet!.following)"
+        followerCount.text = "\(tweet!.followers)" + " Followers"
+        followingCount.text = "\(tweet!.following)" + " Following"
         usernameLabel.text = tweet?.username
             profileImage.setImageWithURL((tweet!.profileImageURL)!)
-            tweetCount.text = "\(tweet?.tweetCount)"
+            tweetCount.text = "\(tweet!.tweetCount)" + " Tweets"
+        
+            if tweet!.bannerImageURL != nil {
+        bannerImage.setImageWithURL(tweet!.bannerImageURL!)
+            }
+        
+            screename.text = "@" + tweet!.screename as! String
+        
             
             
         }

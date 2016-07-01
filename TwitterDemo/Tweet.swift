@@ -80,6 +80,8 @@ class Tweet: NSObject {
             bannerImageURL = NSURL( string: bannerURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
             print(bannerImageURL, "banner image URL")
             
+        }else{
+            bannerImageURL = nil
         }
         
         
