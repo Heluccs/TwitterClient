@@ -14,6 +14,7 @@ class PostCell: UITableViewCell {
 
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var screename: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     
     @IBOutlet weak var timestampLabel: UILabel!

@@ -12,6 +12,8 @@ import UIKit
 class detailsViewController: UIViewController {
     var tweet: Tweet?
     
+    @IBOutlet weak var timestamp: UILabel!
+    @IBOutlet weak var screename: UILabel!
     @IBOutlet weak var replyText: UITextView!
 
     @IBAction func replyAction(sender: AnyObject) {
@@ -56,6 +58,8 @@ class detailsViewController: UIViewController {
         usernameLabel.text = tweet?.username
         replyText.text = "@\(tweet!.screename) "
         profileImage.setImageWithURL(tweet!.profileImageURL!)
+        screename.text = "@" + tweet!.screename
+        timestamp.text = tweet?.date
         
         
 

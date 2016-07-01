@@ -80,6 +80,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.timestampLabel.text = tweet.date
             cell.usernameLabel.text = tweet.username
             cell.profileImage.setImageWithURL(tweet.profileImageURL!)
+        cell.screename.text = "@" + tweet.screename as String
+        
             //cell.delegate = self
         
             

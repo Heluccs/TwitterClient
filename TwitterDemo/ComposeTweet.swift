@@ -9,7 +9,9 @@
 import UIKit
 
 class ComposeTweet: UIViewController {
+    @IBOutlet weak var nameLabel: UILabel!
 
+    @IBOutlet weak var image: UIImageView!
     @IBAction func publishAction(sender: AnyObject) {
         if let text = tweetTextField.text{
             let params = ["status": text]
@@ -28,6 +30,10 @@ class ComposeTweet: UIViewController {
     @IBOutlet weak var tweetTextField: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = "Whats on your mind " + ((User.currentUser?.name)! as String) as! String + "?"
+        
+        image.setImageWithURL((User.currentUser?.userImageURL)!)
+        
 
         // Do any additional setup after loading the view.
     }

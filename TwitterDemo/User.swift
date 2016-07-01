@@ -19,13 +19,17 @@ class User: NSObject {
     var following: Int = 0
     var followers: Int = 0
     var tweetCount: Int = 0
+    var bannerImageURL: NSURL?
+    var about: NSString?
     
    
 
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
-        print("user dictionary")
+        print("olivia dictionary")
+        
+        print(dictionary["profile_banner_url"])
         print(dictionary)
         name = dictionary["name"] as? String
         
@@ -34,6 +38,7 @@ class User: NSObject {
         following = dictionary["friends_count"] as! Int
         
         tweetCount = dictionary["statuses_count"] as! Int
+        about = dictionary["description"] as? String
       
         
         
@@ -46,6 +51,28 @@ class User: NSObject {
         if let userImageURLString = dictionary["profile_image_url_https"] as? String {
             userImageURL = NSURL(string: userImageURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
         }
+        
+//        if let bannerURLString = dictionary["profile_banner_url"]{
+//            bannerImageURL = NSURL( string: bannerURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
+//            print(bannerImageURL, "banner image URL")
+//            
+//        }
+        
+        
+        
+//        if let bannerImageURLString = dictionary["profile_banner_url"] as? String{
+//            print("bannerURL")
+//            if bannerImageURLString != "<null>" {
+//                print("bannerImageURLString")
+//                print(bannerImageURLString)
+//                
+//            
+//            bannerImageURL = NSURL(string: bannerImageURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
+////            print(bannerImageURL)
+////            }
+////        
+////            
+////        }
         
         
         

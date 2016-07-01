@@ -12,6 +12,9 @@ class ProfilePostCell: UITableViewCell {
 
     @IBOutlet weak var tweetText: UILabel!
     @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var timestamp: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

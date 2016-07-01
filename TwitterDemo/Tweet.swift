@@ -26,7 +26,9 @@ class Tweet: NSObject {
     var followers: Int = 0
     var tweetCount: Int = 0
     var ID: String?
-    var screename: NSString!
+    var screename: String!
+    var bannerImageURL: NSURL?
+    
     
 
     
@@ -34,15 +36,24 @@ class Tweet: NSObject {
     
     
     init(dictionary: NSDictionary) {
+        print("tweet dictionary")
+        print("dict profile banner", dictionary["profile_banner_url"])
+        
         print(dictionary)
+        
         text = dictionary["text"] as? String
         retweetCount = (dictionary["retweet_count"] as! Int) ?? 0
         favoritesCount = (dictionary["favorite_count"] as! Int) ?? 0
         timestampString = (dictionary["created_at"] as! String) ?? ""
         let user = dictionary["user"]
         userdict = dictionary["user"] as! NSDictionary
+        print("userdict profile banner", userdict["profile_banner_url"])
+        print(userdict, "userdictionary")
         followers = userdict["followers_count"] as! Int
         following = userdict["friends_count"] as! Int
+        screename = userdict["screen_name"] as! String
+        
+        
         
         tweetCount = userdict["statuses_count"] as! Int
         ID = dictionary["id_str"] as! String
@@ -63,7 +74,13 @@ class Tweet: NSObject {
            
         }
         
-        
+     
+
+        if let bannerURLString = userdict["profile_banner_url"]{
+            bannerImageURL = NSURL( string: bannerURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
+            print(bannerImageURL, "banner image URL")
+            
+        }
         
         
     

@@ -10,6 +10,7 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var numFollowing: UILabel!
@@ -20,7 +21,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var profileImage: UIImageView!
     var user: User?
     var myTweets: [Tweet] = []
+    var aTweet: Tweet?
     
+    @IBOutlet weak var aboutUser: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -30,9 +33,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         TwitterClient.sharedInstance.profileTimeline({(tweets: [Tweet]) -> () in
             self.myTweets = tweets
+            self.aTweet = self.myTweets[1]
             print(self.myTweets)
             
             self.tableView.reloadData()
+            self.viewDidLoad()
             print("ProfileTimeline")
             print(tweets.count)
             }, failure: { (error: NSError) -> () in
@@ -40,15 +45,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
         })
         
-        numFollowing.text = "\(User.currentUser!.following)" as String
+//        numFollowing.text = "\(User.currentUser!.following)" as String + " Following"
         
-        numFollowers.text = "\(User.currentUser!.followers)" as String
+        numFollowers.text = "\(User.currentUser!.followers)" as String + " Followers" + "    " + "\(User.currentUser!.following)" as String + " Following"
 
-        numTweet.text = "\(User.currentUser!.tweetCount)"
-        usernameLabel.text = "\(User.currentUser!.screename)"
+        numTweet.text = "\(User.currentUser!.tweetCount)" + " Tweets"
+        usernameLabel.text = "@" + "\(User.currentUser!.screename)"
         nameLabel.text = User.currentUser!.name as? String
+        aboutUser.text = User.currentUser!.about as? String
         
         profileImage.setImageWithURL((User.currentUser?.userImageURL)!)
+        
+        
+        
+        if aTweet != nil {
+      backgroundImage.setImageWithURL(aTweet!.bannerImageURL!)
+        }
+        
+        
         
         
         
@@ -71,12 +85,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cell = tableView.dequeueReusableCellWithIdentifier("postProfileCell", forIndexPath: indexPath) as! ProfilePostCell
         let tweet = myTweets[indexPath.row]
+        print(tweet)
+        print(tweet.profileImageURL)
         cell.username.text = User.currentUser!.name as? String
         
-        cell.username.text = "Olivia Koshy"
+        cell.username.text = tweet.username
+        cell.profileImage.setImageWithURL((User.currentUser?.userImageURL)!)
         print(cell.username.text)
         print("profile cell")
         cell.tweetText.text = tweet.text as? String
+        cell.timestamp.text = tweet.date 
+    
         return cell
     }
     
