@@ -11,26 +11,57 @@ import UIKit
 class User: NSObject {
     
     var name: NSString?
-    var screename: NSString?
+    var screename: NSString!
     var profileURL: NSURL?
     var tagline: NSString?
     var dictionary: NSDictionary?
+    var userImageURL: NSURL?
+    var following: Int = 0
+    var followers: Int = 0
+    var tweetCount: Int = 0
+    
    
 
     
     init(dictionary: NSDictionary) {
         self.dictionary = dictionary
+        print("user dictionary")
+        print(dictionary)
         name = dictionary["name"] as? String
+        
         screename = dictionary["screen_name"] as? String
+        followers = dictionary["followers_count"] as! Int
+        following = dictionary["friends_count"] as! Int
+        
+        tweetCount = dictionary["statuses_count"] as! Int
+      
+        
         
         let profileURLString = dictionary["profile_image_url_https"] as? String
         if let profileURLString = profileURLString {
             profileURL = NSURL( string: profileURLString)
-            
+        
         }
         
-        tagline = dictionary["description"] as? String
+        if let userImageURLString = dictionary["profile_image_url_https"] as? String {
+            userImageURL = NSURL(string: userImageURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
+        }
         
+        
+        
+        
+//        userImageURL = dictionary["profile_image_url"] as! String
+//        if let userImageURL = userImageURL {
+//            userImageNSURL = NSURL(string: userImageURL)
+//            print(userImageNSURL)
+//           
+//        }
+//        
+    
+        
+        
+        
+        tagline = dictionary["description"] as? String
         
         
     }

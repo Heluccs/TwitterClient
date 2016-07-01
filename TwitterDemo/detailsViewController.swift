@@ -11,19 +11,51 @@ import UIKit
 
 class detailsViewController: UIViewController {
     var tweet: Tweet?
+    
+    @IBOutlet weak var replyText: UITextView!
 
+    @IBAction func replyAction(sender: AnyObject) {
+       let userID = tweet?.ID
+        
+        if let text = replyText.text {
+            let params: NSDictionary = ["status": text, "in_reply_to_status_id": userID!]
+           TwitterClient.sharedInstance.postTweet(params)
+            
+            navigationController?.popToRootViewControllerAnimated(true)
+        }
+        
+        
+        
+        
+        
+    }
+    @IBAction func favoriteAction(sender: AnyObject) {
+        TwitterClient.sharedInstance.favorite(tweet!.ID!)
+        faveCountLabel.text = "\(tweet!.favoritesCount + 1)"
+           }
+    
+    
+    @IBAction func rtAction(sender: AnyObject) {
+        
+        TwitterClient.sharedInstance.retweet(tweet!.ID!)
+        RTCountLabel.text = "\(tweet!.retweetCount + 1)"
+        
+    }
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var faveCountLabel: UILabel!
     @IBOutlet weak var RTCountLabel: UILabel!
     
+    @IBOutlet weak var profileImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tweetLabel.text = tweet!.text as! String
+        tweetLabel.text = tweet!.text as? String
         faveCountLabel.text = "\(tweet!.favoritesCount)"
         RTCountLabel.text = "\(tweet!.retweetCount)"
         usernameLabel.text = tweet?.username
+        replyText.text = "@\(tweet!.screename) "
+        profileImage.setImageWithURL(tweet!.profileImageURL!)
         
         
 

@@ -50,6 +50,23 @@ class TwitterClient: BDBOAuth1SessionManager {
         
     
 }
+    func profileTimeline( success: ([Tweet]) -> (), failure: (NSError) -> ()){
+        
+        
+        
+        GET("1.1/statuses/user_timeline.json", parameters:nil , success: { (task: NSURLSessionDataTask, response: AnyObject?) -> Void in
+            
+            let dictionaries = response as! [NSDictionary]
+            let tweets = Tweet.tweetsWithArray(dictionaries)
+            
+            success(tweets)
+            
+            }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                failure(error)
+        })
+    }
+    
+    
     func login(success: () -> (), failure: (NSError) -> ()) {
         loginSuccess = success
         loginFailure = failure
@@ -94,7 +111,60 @@ class TwitterClient: BDBOAuth1SessionManager {
             print("error: \(error.localizedDescription)")
             self.loginFailure?(error)
         }
+    }
+    
+    func postTweet(params: NSDictionary) {
+            print(params)
+            
+            POST("1.1/statuses/update.json", parameters: params, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+                print("posted tweet")
+                
+               
+            }) { (task: NSURLSessionDataTask?, error: NSError) in
+                print("error")
+                print(error.localizedDescription)
+                
+            }
+        }
+    
+    func retweet(id: String) {
+        
+        POST("1.1/statuses/retweet/\(id).json", parameters: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            print("RT!!!")
+            
+            
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+        print(error.localizedDescription)
+        
+        }
+        
+    
+    
+    }
+    
+    
+    
+    func favorite(id: String) {
+        var params = NSDictionary()
+        params = ["id": id]
+        POST("1.1/favorites/create.json", parameters: params, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+            print("favorited!!!")
+            
+            
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            print(error.localizedDescription)
+            
+            
+        }
+        
+        
         
     }
 
+        
+    
+    
+    
+
 }
+

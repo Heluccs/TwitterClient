@@ -19,19 +19,52 @@ class Tweet: NSObject {
     var retweetCount: Int = 0
     var favoritesCount: Int = 0
     var username : String = ""
+    var profileImageURL: NSURL?
+    var userdict : NSDictionary
+    var userImageURL: NSURL?
+    var following: Int = 0
+    var followers: Int = 0
+    var tweetCount: Int = 0
+    var ID: String?
+    var screename: NSString!
+    
+
+    
+    
+    
     
     init(dictionary: NSDictionary) {
+        print(dictionary)
         text = dictionary["text"] as? String
         retweetCount = (dictionary["retweet_count"] as! Int) ?? 0
         favoritesCount = (dictionary["favorite_count"] as! Int) ?? 0
         timestampString = (dictionary["created_at"] as! String) ?? ""
         let user = dictionary["user"]
-        print(user)
+        userdict = dictionary["user"] as! NSDictionary
+        followers = userdict["followers_count"] as! Int
+        following = userdict["friends_count"] as! Int
         
-        if let user = user {
+        tweetCount = userdict["statuses_count"] as! Int
+        ID = dictionary["id_str"] as! String
+        screename = userdict["screen_name"] as! String
+
+        
+        
+        if let user = user{
             username = user["name"] as! String
             print(username)
         }
+        
+        if let profileImageURLString = user!["profile_image_url_https"] as? String {
+            
+            profileImageURL = NSURL(string: profileImageURLString.stringByReplacingOccurrencesOfString("_normal", withString: ""))
+            print("profile URL")
+            print(profileImageURL)
+           
+        }
+        
+        
+        
         
     
         

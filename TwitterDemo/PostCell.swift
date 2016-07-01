@@ -9,16 +9,34 @@
 import UIKit
 
 class PostCell: UITableViewCell {
+    
+   // var delegate: myCellDelegator!
 
     @IBOutlet weak var usernameLabel: UILabel!
     
     @IBOutlet weak var tweetLabel: UILabel!
     
     @IBOutlet weak var timestampLabel: UILabel!
-    var tweet: Tweet?
+    
+    var tweet: Tweet!
+    
+    @IBOutlet weak var profileImage: UIImageView!
     
     
     
+    @IBOutlet weak var profileButton: UIButton!
+    
+//    @IBAction func profileButtonPressed(sender: AnyObject) {
+//        //var tweetInfo = self.tweet
+//        if(self.delegate != nil){ //Just to be safe.
+//            print("in action")
+//            //print(tweetInfo)
+//            self.delegate.callSegueFromCell(self.tweet!)
+//            
+//        }
+//
+//        
+//    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

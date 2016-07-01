@@ -7,6 +7,10 @@
 //
 
 import UIKit
+//
+//protocol myCellDelegator {
+//    func callSegueFromCell(data: Tweet)
+//}
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
@@ -21,6 +25,7 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tweetsTableView.reloadData()
         print("viewDidLoad")
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tweetsTableView.insertSubview(refreshControl, atIndex: 0)
@@ -36,6 +41,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error.localizedDescription)
                 
         })
+        
+        
         
         
         
@@ -63,13 +70,23 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("tableView")
         
         
+        
             let tweet = tweets[indexPath.row]
+        
             cell.tweet = tweet
             let text = tweet.text as! String
             cell.tweetLabel.text = text
             print(tweet.text)
             cell.timestampLabel.text = tweet.date
             cell.usernameLabel.text = tweet.username
+            cell.profileImage.setImageWithURL(tweet.profileImageURL!)
+            //cell.delegate = self
+        
+            
+            //print(cell.profileImage)
+        
+        
+        
         
         
         return cell
@@ -81,6 +98,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return tweets.count
     }
     
+//    func callSegueFromCell(data: Tweet) {
+//        print("segue to profile details")
+//        self.performSegueWithIdentifier("detailProfile", sender: data )
+//
+//    }
     
     
     func refreshControlAction(refreshControl: UIRefreshControl) {
@@ -116,7 +138,22 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let detailViewController = segue.destinationViewController as!detailsViewController
         
             detailViewController.tweet = tweet
+        } else if(segue.identifier == "detailProfile") {
+            print("went here")
+            
+            let profileButton = sender as? UIButton
+            let contentView = profileButton?.superview
+            let postCell = contentView?.superview as? PostCell
+            
+            let indexPath = tweetsTableView.indexPathForCell(postCell!)
+            let tweet = tweets[indexPath!.row]
+            
+            let vc: profileDetail = segue.destinationViewController as! profileDetail
+            
+            vc.tweet = tweet
         }
+        
+       
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
