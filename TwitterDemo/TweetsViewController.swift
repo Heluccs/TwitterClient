@@ -29,6 +29,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("viewDidLoad")
         refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), forControlEvents: UIControlEvents.ValueChanged)
         tweetsTableView.insertSubview(refreshControl, atIndex: 0)
+        tweetsTableView.estimatedRowHeight = 500
+        tweetsTableView.rowHeight = UITableViewAutomaticDimension
 
         
         
