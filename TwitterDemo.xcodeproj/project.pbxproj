@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E6907481D2730CC002D8258 /* UserPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6907471D2730CC002D8258 /* UserPostCell.swift */; };
 		3EA6831A1D23339C00E10E85 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA683191D23339C00E10E85 /* PostCell.swift */; };
 		3EA6831E1D243E1A00E10E85 /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA6831D1D243E1A00E10E85 /* detailsViewController.swift */; };
 		3EA683201D24669E00E10E85 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA6831F1D24669E00E10E85 /* ProfileViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E6907471D2730CC002D8258 /* UserPostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPostCell.swift; sourceTree = "<group>"; };
 		3EA683191D23339C00E10E85 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3EA6831D1D243E1A00E10E85 /* detailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
 		3EA6831F1D24669E00E10E85 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				3EA683191D23339C00E10E85 /* PostCell.swift */,
 				3EA683471D25E61000E10E85 /* ProfilePostCell.swift */,
+				3E6907471D2730CC002D8258 /* UserPostCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				3EEBAA2F1D21FC750038C6C8 /* TweetsViewController.swift in Sources */,
 				3EA683241D256D5300E10E85 /* profileDetail.swift in Sources */,
 				3EA683481D25E61000E10E85 /* ProfilePostCell.swift in Sources */,
+				3E6907481D2730CC002D8258 /* UserPostCell.swift in Sources */,
 				3EA683461D25A05D00E10E85 /* ComposeTweet.swift in Sources */,
 				3EA683201D24669E00E10E85 /* ProfileViewController.swift in Sources */,
 				3EEBAA2D1D21E7CB0038C6C8 /* TwitterClient.swift in Sources */,

@@ -8,13 +8,15 @@
 
 import UIKit
 
-class profileDetail: UIViewController {
+class profileDetail: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tweet: Tweet?
+    var userTweets: [Tweet] = []
     
     @IBOutlet weak var screename: UILabel!
     @IBOutlet weak var followingCount: UILabel!
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var bannerImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
 
@@ -24,10 +26,35 @@ class profileDetail: UIViewController {
     
     @IBOutlet weak var followerCount: UILabel!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        
         print("at profile detail")
         print(tweet)
+        
+        
+        
         if tweet != nil {
+            
+            
+            TwitterClient.sharedInstance.userTimeline( (tweet?.screename)!, success:  {(tweets: [Tweet]) -> () in
+                           self.userTweets = tweets
+                
+                print("usertweets", self.userTweets)
+                
+                self.tableView.reloadData()
+                //            self.viewDidLoad()
+                //            print("ProfileTimeline")
+               
+                }, failure: { (error: NSError) -> () in
+                    print(error.localizedDescription)
+                    
+            })
+            
+            
     
         followerCount.text = "\(tweet!.followers)" + " Followers"
         followingCount.text = "\(tweet!.following)" + " Following"
@@ -46,12 +73,35 @@ class profileDetail: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("userCell", forIndexPath: indexPath) as! UserPostCell
+        let userTweet = userTweets[indexPath.row]
+        
+        cell.username.text = userTweet.username
+        cell.timestamp.text = userTweet.date
+        cell.postImage.setImageWithURL(userTweet.profileImageURL!)
+        cell.tweetPost.text = userTweet.text as! String
+        
+        
+        return cell
+        
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
     
         
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userTweets.count
     }
     
 

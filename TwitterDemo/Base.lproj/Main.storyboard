@@ -94,19 +94,12 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-k8-an7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pZ-k8-an7">
                                                     <rect key="frame" x="208" y="0.0" width="104" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-53-6pJ">
-                                                    <rect key="frame" x="4" y="16" width="59" height="59"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="59" id="0mc-Do-ctp"/>
-                                                        <constraint firstAttribute="width" constant="59" id="q5k-Dg-jsL"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tweet Field" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFb-uK-QK5">
                                                     <rect key="frame" x="71" y="35" width="241" height="40"/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
@@ -154,23 +147,31 @@
                                                         <segue destination="bm1-lg-zO4" kind="show" identifier="detailProfile" id="nLk-C5-V5o"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-53-6pJ">
+                                                    <rect key="frame" x="8" y="16" width="59" height="59"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="59" id="0mc-Do-ctp"/>
+                                                        <constraint firstAttribute="width" constant="59" id="q5k-Dg-jsL"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="LvZ-E5-SHg" firstAttribute="top" secondItem="zFb-uK-QK5" secondAttribute="bottom" id="7un-Q5-0U0"/>
-                                                <constraint firstItem="oMx-53-6pJ" firstAttribute="leading" secondItem="CF9-mL-TqR" secondAttribute="leadingMargin" constant="-4" id="AXa-RX-nWC"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zFb-uK-QK5" secondAttribute="trailing" id="DBK-Ds-Ps2"/>
                                                 <constraint firstItem="oMx-53-6pJ" firstAttribute="top" secondItem="CF9-mL-TqR" secondAttribute="topMargin" constant="8" id="Dnq-J1-7dc"/>
-                                                <constraint firstItem="Iv9-TP-wtt" firstAttribute="top" secondItem="CF9-mL-TqR" secondAttribute="topMargin" constant="-10" id="EH9-FQ-5xe"/>
+                                                <constraint firstItem="6pZ-k8-an7" firstAttribute="top" secondItem="CF9-mL-TqR" secondAttribute="topMargin" constant="-10" id="GIl-PU-Hx9"/>
                                                 <constraint firstItem="Iv9-TP-wtt" firstAttribute="leading" secondItem="sDz-Tf-VFd" secondAttribute="trailing" constant="51" id="GpI-JR-fxu"/>
                                                 <constraint firstItem="C2j-pe-XVl" firstAttribute="top" secondItem="CF9-mL-TqR" secondAttribute="topMargin" constant="14" id="JOS-Qu-Lfd"/>
                                                 <constraint firstItem="zFb-uK-QK5" firstAttribute="top" secondItem="GNm-v0-ZPL" secondAttribute="bottom" constant="1" id="Sp3-pU-5u2"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8jX-Tf-5y8" secondAttribute="bottom" constant="-3" id="Uvv-28-qCm"/>
+                                                <constraint firstItem="Iv9-TP-wtt" firstAttribute="top" secondItem="CF9-mL-TqR" secondAttribute="topMargin" constant="-5" id="bQE-o2-UeR"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="LvZ-E5-SHg" secondAttribute="bottom" constant="-3" id="hhD-oz-tUf"/>
                                                 <constraint firstItem="GNm-v0-ZPL" firstAttribute="leading" secondItem="oMx-53-6pJ" secondAttribute="trailing" constant="8" id="hpB-Ki-Zvr"/>
                                                 <constraint firstItem="sDz-Tf-VFd" firstAttribute="leading" secondItem="oMx-53-6pJ" secondAttribute="trailing" constant="8" id="n3r-hO-GW9"/>
                                                 <constraint firstItem="GNm-v0-ZPL" firstAttribute="top" secondItem="sDz-Tf-VFd" secondAttribute="bottom" id="nFY-uI-yjz"/>
                                                 <constraint firstItem="sDz-Tf-VFd" firstAttribute="top" secondItem="CF9-mL-TqR" secondAttribute="topMargin" constant="-6" id="pBI-9X-vei"/>
                                                 <constraint firstItem="8jX-Tf-5y8" firstAttribute="top" secondItem="zFb-uK-QK5" secondAttribute="bottom" id="qz3-KY-hJB"/>
+                                                <constraint firstItem="oMx-53-6pJ" firstAttribute="leading" secondItem="CF9-mL-TqR" secondAttribute="leadingMargin" id="tGw-3l-DM8"/>
                                                 <constraint firstItem="zFb-uK-QK5" firstAttribute="top" secondItem="GNm-v0-ZPL" secondAttribute="bottom" constant="1" id="uLa-YY-sc5"/>
                                                 <constraint firstItem="Iv9-TP-wtt" firstAttribute="trailing" secondItem="CF9-mL-TqR" secondAttribute="trailingMargin" id="xRl-4H-J4C"/>
                                                 <constraint firstItem="zFb-uK-QK5" firstAttribute="leading" secondItem="oMx-53-6pJ" secondAttribute="trailing" constant="8" id="z5g-56-pNx"/>
@@ -242,41 +243,87 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fS-td-rqg">
                                 <rect key="frame" x="0.0" y="64" width="320" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0003579832105" green="0.71067427849999998" blue="0.88444862570000005" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-c7-udA">
-                                <rect key="frame" x="64" y="256" width="191" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHD-c7-udA">
+                                <rect key="frame" x="102" y="193" width="144" height="21"/>
                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-FY-qIK">
-                                <rect key="frame" x="96" y="125" width="128" height="128"/>
+                                <rect key="frame" x="5" y="137" width="93" height="93"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FollowerCount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-fz-C60">
-                                <rect key="frame" x="64" y="335" width="191" height="21"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FollowerCount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-fz-C60">
+                                <rect key="frame" x="5" y="246" width="161" height="21"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6O-h7-QLH">
-                                <rect key="frame" x="55" y="312" width="210" height="21"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6O-h7-QLH">
+                                <rect key="frame" x="5" y="231" width="210" height="21"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="screename" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XY-Ch-uxx">
-                                <rect key="frame" x="71" y="283" width="172" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qHu-kV-KKJ">
+                                <rect key="frame" x="0.0" y="290.5" width="320" height="228"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" rowHeight="47" id="9CJ-uJ-MU5" customClass="UserPostCell" customModule="TwitterDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="47"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9CJ-uJ-MU5" id="nRA-3C-V0P">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="46.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVm-Xi-BZF">
+                                                    <rect key="frame" x="12" y="4" width="33" height="33"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9r-zc-np3">
+                                                    <rect key="frame" x="59" y="0.0" width="110" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4y-69-WEb">
+                                                    <rect key="frame" x="59" y="17" width="253" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="8"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOT-sp-Ijx">
+                                                    <rect key="frame" x="223" y="3" width="89" height="9"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" red="0.0003579832105" green="0.71067427849999998" blue="0.88444862570000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="postImage" destination="aVm-Xi-BZF" id="x6L-Fh-7NA"/>
+                                            <outlet property="timestamp" destination="kOT-sp-Ijx" id="jfS-Jb-eDB"/>
+                                            <outlet property="tweetPost" destination="T4y-69-WEb" id="9xm-J6-UTR"/>
+                                            <outlet property="username" destination="u9r-zc-np3" id="4aQ-dm-f7Z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FollowingCount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQA-Nc-TRO">
+                                <rect key="frame" x="5" y="264" width="151" height="15.5"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="screename" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XY-Ch-uxx">
+                                <rect key="frame" x="102" y="217" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0003579832105" green="0.71067427849999998" blue="0.88444862570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FollowingCount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQA-Nc-TRO">
-                                <rect key="frame" x="55" y="364" width="210" height="20.5"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -285,6 +332,7 @@
                         <outlet property="followingCount" destination="PQA-Nc-TRO" id="TcC-69-rHa"/>
                         <outlet property="profileImage" destination="ejh-FY-qIK" id="qCP-V7-jp9"/>
                         <outlet property="screename" destination="8XY-Ch-uxx" id="TGi-Kb-asr"/>
+                        <outlet property="tableView" destination="qHu-kV-KKJ" id="0wM-4g-SPZ"/>
                         <outlet property="tweetCount" destination="p6O-h7-QLH" id="oH3-ab-5qA"/>
                         <outlet property="usernameLabel" destination="hHD-c7-udA" id="Dlp-f8-3J8"/>
                     </connections>
@@ -376,7 +424,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@screename" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9p-NE-OxN">
-                                <rect key="frame" x="113" y="101" width="82" height="21"/>
+                                <rect key="frame" x="113" y="101" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0003579832105" green="0.71067427849999998" blue="0.88444862570000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
