@@ -203,9 +203,9 @@
                     <navigationItem key="navigationItem" id="nBY-KC-Ru5">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="W8X-ru-X59">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zPm-sH-3fK">
-                                <rect key="frame" x="16" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logut"/>
+                                <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogoutButton:" destination="4mB-oJ-GUd" eventType="touchUpInside" id="MsI-XV-4Gn"/>
                                 </connections>
