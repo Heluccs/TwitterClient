@@ -1,12 +1,8 @@
 # Project 4 - *Twitter Client*
 
-**Twitter** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
-
-Time spent: **~30** hours spent in total
+**Twitter** is a basic twitter app to read and compose tweets using the [Twitter API](https://apps.twitter.com/).
 
 ## User Stories
-
-The following **required** functionality is completed:
 
 - [x] User can sign in using OAuth login flow
 - [x] The current signed in user will be persisted across restarts
@@ -24,32 +20,14 @@ The following **required** functionality is completed:
 - [x] User can navigate to view their own profile
    - [x] Contains the user header view: picture and tagline
    - [x] Contains a section with the users basic stats: # tweets, # following, # followers
-
-The following **optional** features are implemented:
-
 - [x] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
-- [ ] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count.
-- [ ] When composing, you should have a countdown in the upper right for the tweet limit.
-- [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
 - [x] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet
-- [ ] Links in tweets are clickable
 - [x] User can switch between timeline, mentions, or profile view through a tab bar (minus mentions)
-- [ ] Pulling down the profile page should blur and resize the header image.
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
 - [x] Can View Current User's tweets in profile 
 - [x] User profile includes banner
 - [x] Can view user profile when clicking their image on timeline including their tweets, bio, banner photo, and profile image 
 
 
-Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
-
-1.
-2.
-
-## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
